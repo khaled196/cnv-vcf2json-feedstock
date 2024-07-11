@@ -1,5 +1,5 @@
 {% set name = "cnv-vcf2json" %}
-{% set version = "1.0.4" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cnv_vcf2json-{{ version }}.tar.gz
-  sha256: 2276cd79c84aad6e2446beded2bf311b87a58edcf360914700dcabd91f764a87
+  sha256: 7aee4cab8a028f8c9d1076152ea992d9b53528e050b3087da20641193f0e25ad
 
 build:
   entry_points:
