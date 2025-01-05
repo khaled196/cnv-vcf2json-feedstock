@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cnv_vcf2json-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/cnv_vcf2json-{{ version }}.tar.gz
   sha256: 7aee4cab8a028f8c9d1076152ea992d9b53528e050b3087da20641193f0e25ad
 
 build:
@@ -14,14 +14,14 @@ build:
     - cnv-vcf2json = vcf_converter.cnv_vcf2json:cnv_vcf2json
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - jsonschema
 
 test:
@@ -32,6 +32,7 @@ test:
     - cnv-vcf2json --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   summary: Converts the structural variants VCF file into JSON file
