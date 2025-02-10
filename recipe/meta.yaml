@@ -1,5 +1,5 @@
 {% set name = "cnv-vcf2json" %}
-{% set version = "1.1.0" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/cnv_vcf2json-{{ version }}.tar.gz
-  sha256: 7aee4cab8a028f8c9d1076152ea992d9b53528e050b3087da20641193f0e25ad
+  sha256: 7a1fc7bde137e7d2dc766aeda21b446373c32129af1d5259304dae24b5f857e5
 
 build:
   entry_points:
     - cnv-vcf2json = vcf_converter.cnv_vcf2json:cnv_vcf2json
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
