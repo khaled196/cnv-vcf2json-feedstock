@@ -35,7 +35,7 @@ test:
     - python {{ python_min }}
 
 about:
-  summary: Converts the structural variants VCF file into JSON file
+  summary: Converts the CNVkit structural variants VCF file into JSON format
   license: CC-BY-NC-4.0
   home: https://pypi.org/project/cnv-vcf2json/
 
